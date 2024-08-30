@@ -2,6 +2,12 @@
 
 -npm create vite@latest
 -setup tailwind css   
+-Header
+-Routing of App
+-Login form 
+-sign up form 
+-form validation
+-useRef Hook
 
 # features
 -Login/Sign up
