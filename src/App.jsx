@@ -1,7 +1,8 @@
 import "./App.css";
+import Body from "./assets/components/Body";
 
 function App() {
-  return <p className="text-3xl font-bold underline">New project</p>;
+  return <Body />;
 }
 
 export default App;
