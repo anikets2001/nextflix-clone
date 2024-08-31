@@ -6,12 +6,17 @@ const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
 
   const handleButtonClick = (e) => {
     // validate the form data
-    const message = checkValidData(email.current.value, password.current.value);
+    const message = checkValidData(
+      name.current.value,
+      email.current.value,
+      password.current.value
+    );
     setErrorMessage(message);
   };
 
@@ -32,6 +37,7 @@ const Login = () => {
           </h1>
           {!isSignInForm && (
             <input
+              ref={name}
               title="Full Name"
               type="text"
               placeholder="Enter you full name"
