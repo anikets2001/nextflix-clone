@@ -13,6 +13,8 @@
 -Create SignUp user account
 -Implement signIn and signUp user api form firebase
 -created our redux store with userSlice
+-implement sign out
+-update profile 
 
 # features
 -Login/Sign up
