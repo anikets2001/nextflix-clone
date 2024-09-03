@@ -7,13 +7,12 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/Store/userSlice";
+import { BG_IMAGE_URL, USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [isSignInForm, setIsSignInForm] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -39,11 +38,11 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: nameValue,
-            photoURL: "https://avatars.githubusercontent.com/u/90143845?v=4",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               // Profile updated!
-              const {uid, email, displayName, photoURL} = auth.currentUser;
+              const { uid, email, displayName, photoURL } = auth.currentUser;
               dispatch(
                 addUser({
                   uid: uid,
@@ -52,12 +51,9 @@ const Login = () => {
                   photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
-              
-
               setErrorMessage(error.message);
             });
         })
@@ -72,8 +68,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log("user:", user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -90,7 +84,9 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="flex justify-center items-center h-screen bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/IN-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg')]">
+      <div
+        className={`flex justify-center items-center h-screen bg-[url('${BG_IMAGE_URL}')] bg-cover bg-center bg-no-repeat`}
+      >
         <form
           onSubmit={(e) => e.preventDefault()}
           className="bg-black py-12 px-16 flex flex-col bg-opacity-80"
