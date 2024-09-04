@@ -18,7 +18,7 @@
 -BugFix - sign up user displayName and profile picture update
 -BugFix - if user is not logged in redirect him to the login page and if logged in redirect him to browse page 
 -unsubscribed to onAuthStateChange callback
--add constants for images url
+-add constants for images ur
 
 # features
 -Login/Sign up
