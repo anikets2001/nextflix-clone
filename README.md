@@ -14,7 +14,7 @@
 -Implement signIn and signUp user api form firebase
 -created our redux store with userSlice
 -implement sign out
--update profile 
+-update user profile 
 -BugFix - sign up user displayName and profile picture update
 -BugFix - if user is not logged in redirect him to the login page and if logged in redirect him to browse page 
 -unsubscribed to onAuthStateChange callback
