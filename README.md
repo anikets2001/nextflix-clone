@@ -1,4 +1,5 @@
 # Netflix Clone
+-url-- https://netflixgpt-b29c9.web.app/
 
 -npm create vite@latest
 -setup tailwind css   
@@ -18,7 +19,11 @@
 -BugFix - sign up user displayName and profile picture update
 -BugFix - if user is not logged in redirect him to the login page and if logged in redirect him to browse page 
 -unsubscribed to onAuthStateChange callback
--add constants for images ur
+-add constants for images
+-register on tmdb
+-get access token
+-go to documentation get data from now playing movie list
+-and got the data in the browse page
 
 # features
 -Login/Sign up
