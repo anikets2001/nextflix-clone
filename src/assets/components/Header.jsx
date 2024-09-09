@@ -48,15 +48,10 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute w-screen flex items-center justify-between pr-4">
-      <img
-        src={LOGO}
-        alt="netflix-logo"
-        height={150}
-        width={200}
-      />
+    <div className="absolute bg-opacity-100 bg-black w-screen flex items-center justify-between pr-4 text-white">
+      <img src={LOGO} alt="netflix-logo" height={150} width={200} />
       {user && (
-        <div>
+        <div className="flex gap-4 items-center">
           <img
             className="hidden md:block w-12 h-12"
             alt="usericon"

@@ -24,6 +24,13 @@
 -get access token
 -go to documentation get data from now playing movie list
 -and got the data in the browse page
+-update store with movie data
+-planning for main container and secondary container
+-fetch data for trailer video
+-create custom hook (useMovieTrailer) for fetching movie trailer 
+-update store with trailer video data 
+-embedded the youtube video and make it autoplay and mute
+-added tailwind classes to make main container awesome
 
 # features
 -Login/Sign up
