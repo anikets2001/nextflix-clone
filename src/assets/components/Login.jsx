@@ -85,7 +85,7 @@ const Login = () => {
     <div>
       <Header />
       <div
-        className={`flex justify-center items-center h-screen bg-[url('${BG_IMAGE_URL}')] bg-cover bg-center bg-no-repeat`}
+        className={`flex justify-center items-center h-screen bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/IN-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg')] bg-cover bg-center bg-no-repeat`}
       >
         <form
           onSubmit={(e) => e.preventDefault()}
