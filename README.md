@@ -1,6 +1,10 @@
 # Netflix Clone
 -url-- https://netflixgpt-b29c9.web.app/
 
+steps for deployment
+npm run build
+firebase deploy
+
 -npm create vite@latest
 -setup tailwind css   
 -Header
