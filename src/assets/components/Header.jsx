@@ -11,6 +11,10 @@ const Header = () => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
 
+  const handleGptClick = ()=> {
+    // toggle gpt search
+  }
+
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -48,15 +52,19 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute bg-opacity-100 bg-black w-screen flex items-center justify-between pr-4 text-white">
+    <div className="absolute bg-opacity-100 bg-black w-screen flex items-center justify-between pr-8 text-white">
       <img src={LOGO} alt="netflix-logo" height={150} width={200} />
       {user && (
         <div className="flex gap-4 items-center">
-          <img
+          <button className="bg-purple-600 text-white py-2 px-4 mx-4 rounded-md" onClick={handleGptClick}>
+            GPT Search
+          </button>
+
+          {/* <img
             className="hidden md:block w-12 h-12"
             alt="usericon"
             src={user?.photoURL}
-          />
+          /> */}
           <button className="font-bold" onClick={handleSignOut}>
             Sign Out
           </button>
