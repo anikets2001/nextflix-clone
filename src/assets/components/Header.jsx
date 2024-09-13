@@ -5,15 +5,17 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/Store/userSlice";
 import { LOGO } from "../utils/constants";
+import { toggleGptSearchView } from "../utils/Store/gptSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
 
-  const handleGptClick = ()=> {
+  const handleGptClick = () => {
     // toggle gpt search
-  }
+    dispatch(toggleGptSearchView());
+  };
 
   const handleSignOut = () => {
     signOut(auth)
@@ -56,12 +58,15 @@ const Header = () => {
       <img src={LOGO} alt="netflix-logo" height={150} width={200} />
       {user && (
         <div className="flex gap-4 items-center">
-          <button className="bg-purple-600 text-white py-2 px-4 mx-4 rounded-md" onClick={handleGptClick}>
+          <button
+            className="bg-purple-600 text-white py-2 px-4 mx-4 rounded-md"
+            onClick={handleGptClick}
+          >
             GPT Search
           </button>
 
           {/* <img
-            className="hidden md:block w-12 h-12"
+          className="hidden md:block w-12 h-12"
             alt="usericon"
             src={user?.photoURL}
           /> */}
