@@ -35,6 +35,10 @@ firebase deploy
 -update store with trailer video data 
 -embedded the youtube video and make it autoplay and mute
 -added tailwind classes to make main container awesome
+-gpt search page
+-gpt search bar
+-multi language feature
+-Integrate gpt Apis(get OpenAi key)
 
 # features
 -Login/Sign up
@@ -50,4 +54,5 @@ firebase deploy
 
 -NetflixGPT
     -search bar
+    -multi language feature
     -movie suggestions

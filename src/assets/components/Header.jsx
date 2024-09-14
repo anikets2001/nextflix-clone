@@ -6,16 +6,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/Store/userSlice";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/Store/gptSlice";
+import { changeLanguage } from "../utils/Store/configSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
-
-  const handleGptClick = () => {
-    // toggle gpt search
-    dispatch(toggleGptSearchView());
-  };
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
 
   const handleSignOut = () => {
     signOut(auth)
@@ -53,24 +50,38 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
 
+  const handleGptClick = () => {
+    // toggle gpt search
+    dispatch(toggleGptSearchView());
+  };
+
+  const handleLanguageChange = (e) => {
+    dispatch(changeLanguage(e.target.value));
+  };
+
   return (
     <div className="absolute bg-opacity-100 bg-black w-screen flex items-center justify-between pr-8 text-white">
       <img src={LOGO} alt="netflix-logo" height={150} width={200} />
       {user && (
         <div className="flex gap-4 items-center">
-          <select className="px-2 py-1 border rounded-md bg-gray-900 text-white">
-            {SUPPORTED_LANGUAGES.map((lang) => (
-              <option key={lang.identifier} value={lang.identifier}>
-                {lang.name}
-              </option>
-            ))}
-          </select>
+          {showGptSearch && (
+            <select
+              className="px-2 py-1 border rounded-md bg-gray-900 text-white"
+              onChange={handleLanguageChange}
+            >
+              {SUPPORTED_LANGUAGES.map((lang) => (
+                <option key={lang.identifier} value={lang.identifier}>
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          )}
 
           <button
             className="bg-purple-600 text-white py-2 px-4 mx-4 rounded-md"
             onClick={handleGptClick}
           >
-            GPT Search
+            {showGptSearch ? "Home Page" : "Gpt Search"}
           </button>
 
           {/* <img
